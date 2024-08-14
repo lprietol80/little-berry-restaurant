@@ -21,7 +21,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        // Validar Productos 
+        // Validar reservas 
         $datos = $request->validate([
         'UserID' =>['required', 'integer', 'max:10'],
         'ServiceID' =>['required','integer', 'max:10'],
@@ -40,12 +40,10 @@ class BookingController extends Controller
      */
     public function show(Booking $booking)
     {
-        return response()->json($booking,200)
+        return response()->json($booking,200);
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
+    
+    //Update the specified resource in storage.
     public function update(Request $request, Booking $booking)
     {
         // Validar Productos 
@@ -59,8 +57,6 @@ class BookingController extends Controller
         $booking -> update($datos); 
         // Respuesta al Cliente 
         return response()->json(['success' => true, 'message' => 'Reserva actualizada exitosamente'], 200);
-
-
     }
 
     /**
@@ -71,6 +67,6 @@ class BookingController extends Controller
         //eliminar reserva
         $booking -> delete();
         //respuesta al cliente
-        return response()->json(['success'=>true,'message'=>'La reserva ha sido eliminada correctamente'],200)
+        return response()->json(['success'=>true,'message'=>'La reserva ha sido eliminada correctamente'],200);
     }
 }
