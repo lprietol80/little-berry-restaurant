@@ -26,7 +26,7 @@ class BookingController extends Controller
         'UserID' =>['required', 'integer', 'max:10'],
         'ServiceID' =>['required','integer', 'max:10'],
         'Date' =>['required', 'date'],
-        'Status' =>['required', 'varchar','max:255'], 
+        'Status' =>['required', 'string','max:255'], 
         ]);
         //Guardar Datos 
         $booking = Booking::create($datos); 
@@ -48,10 +48,10 @@ class BookingController extends Controller
     {
         // Validar Productos 
         $datos = $request->validate([
-        'UserID' =>['required', 'integer', 'max:10'],
-        'ServiceID' =>['required','integer', 'max:10'],
+        'UserID' =>['required', 'integer', 'max:2000000004'],
+        'ServiceID' =>['required','integer', 'max:100'],
         'Date' =>['required', 'date'],
-        'Status' =>['required', 'varchar','max:255'], 
+        'Status' =>['required', 'string','max:255'], 
         ]);
         //actualizar datos
         $booking -> update($datos); 
