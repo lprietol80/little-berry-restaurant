@@ -5,16 +5,16 @@
 <div class="card bg-base-100 w-96 shadow-xl">
   <figure>
     <img
-      src="https://picsum.photos/id/{{$booking -> id}}/240"
-      alt="table reservation" />
+      src="https://i.pinimg.com/736x/48/98/3e/48983e3d343694dd9b780b9651e8793d.jpg" alt="table reservation" />
   </figure>
   <div class="card-body">
     <h2 class="card-title">{{$booking -> Status}}</h2>
-    <p>{{booking -> ServiceID}}</p>
+    <p>{{$booking -> ServiceID}} 
+    </p>
     <div class="card-actions justify-end">
       <button class="btn btn-primary">Book</button>
     </div>
-  </div> 
-</div>    
+  </div>
+</div>
 @endforeach
 @endsection 
