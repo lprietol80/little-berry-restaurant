@@ -21,7 +21,8 @@ class BookingController extends Controller
      */
     public function create()
     {
-        //
+        
+        return view("bookings.create");
     }
 
     /**
@@ -29,7 +30,8 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Booking::create($request->all());
+        return redirect()->route('bookings.index');
     }
 
     /**
@@ -45,7 +47,7 @@ class BookingController extends Controller
      */
     public function edit(Booking $booking)
     {
-        //
+        return view("bookings.edit",compact('booking'));
     }
 
     /**
@@ -53,7 +55,8 @@ class BookingController extends Controller
      */
     public function update(Request $request, Booking $booking)
     {
-        //
+        $booking->update($request->all());
+        return redirect()->route('bookings.index');
     }
 
     /**
@@ -61,6 +64,7 @@ class BookingController extends Controller
      */
     public function destroy(Booking $booking)
     {
-        //
+        $booking->delete();
+        return redirect()->route('bookings.index');
     }
 }
