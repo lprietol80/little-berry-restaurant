@@ -40,7 +40,7 @@
     {{-- botones --}}
       <div class="form-control mt-6">
         <button type="submit" class="btn btn-primary">Crear reserva</button>
-        <a href="{{ route('bookinga.index')}}" class="btn btn-outline mt-4" 
+        <a href="{{ route('bookings.index')}}" class="btn btn-outline mt-4" 
       >Cancelar</a>
       </div>
     </form>
