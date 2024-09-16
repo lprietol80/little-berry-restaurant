@@ -1,7 +1,9 @@
 @extends('layouts.app')
+
 @section('titulo', 'Mis reservas')
 @section('cabecera', 'Crear reserva')
-@section('contenido')
+
+@section('page-content')
 <div class="flex justify-center my-6">
   <div class="card bg-base-100 w-96 shadow-2xl">
     <form class="card-body" action="{{ route('bookings.store') }}" method="POST">

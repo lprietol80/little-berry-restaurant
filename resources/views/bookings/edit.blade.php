@@ -1,7 +1,8 @@
 @extends('layouts.app')
-@section('titulo', 'Mis productos')
-@section('cabecera', 'Editar producto')
-@section('contenido')
+@section('titulo', 'Mis reservas')
+@section('cabecera', 'Editar reserva')
+@section('page-content')
+
   <div class="flex justify-center my-6">
     <div class="card bg-base-100 w-96 shadow-2xl">
       <form class="card-body" action="{{ route('bookings.update', $booking->id) }}" 
@@ -50,3 +51,4 @@
     </div>
   </div>
 @endsection 
+
