@@ -8,36 +8,44 @@
   <div class="card bg-base-100 w-96 shadow-2xl">
     <form class="card-body" action="{{ route('bookings.store') }}" method="POST">
     @csrf
-    {{-- Nombre --}}
+    {{-- USERID --}}
       <div class="form-control">
         <label class="label">
-        <span class="label-text">Nombre</span>
+        <span class="label-text">User Id</span>
         </label>
-        <input type="text" name="nombre" placeholder="Nombre de la reserva" 
+        <input type="number" name="userId" placeholder="Número de identificación" 
       class="input input-bordered" required />
       </div>
-    {{-- Descripción --}}
+    {{-- Servicio --}}
       <div class="form-control">
         <label class="label">
-          <span class="label-text">Descripción</span>
+          <span class="label-text">Servicios</span>  
         </label>
-      <input type="text" name="descripcion" placeholder="Descripción" 
-      class="input input-bordered" />
+        <select class="input input-bordered"><p>Servicios:</p>
+          <option class="input input-bordered"  value=10 >Cumpleaños</option>
+          <option class="input input-bordered"  value=11 >Cita romántica </option>
+          <option class="input input-bordered"  value=12 >Compromiso</option>
+          <option class="input input-bordered"  value=13 >Negocios</option>
+          <option class="input input-bordered"  value=14 >Amigos</option>
+          <option class="input input-bordered"  value=15>Informal</option>
+        </select>
       </div>
-    {{-- Precio --}}
+
+
+    {{-- Date --}}
       <div class="form-control">
         <label class="label">
-          <span class="label-text">Precio</span>
+          <span class="label-text">Fecha</span>
         </label>
-      <input type="number" name="precio" placeholder="Precio" class="input 
+      <input type="date" name="fecha" placeholder="Fecha" class="input 
       input-bordered" required />
       </div>
-    {{-- Stock --}}
+    {{-- Comensales --}}
       <div class="form-control">
         <label class="label">
-        <span class="label-text">Stock</span>
+        <span class="label-text"># de personas</span>
         </label>
-        <input type="number" name="stock" placeholder="Stock" class="input input-bordered" required/>
+        <input type="number" max="10" name="comensales" placeholder="# de personas" class="input input-bordered" required/>
       </div>
     {{-- botones --}}
       <div class="form-control mt-6">
